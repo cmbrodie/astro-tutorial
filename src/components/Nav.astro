@@ -1,0 +1,12 @@
+---
+import Button from "./Button.astro";
+---
+
+<nav style="display:flex; justify-content: space-between; align-items: center;">
+  <h1>{Astro.props.title}</h1>
+  <div>
+    <Button route="/" routeName="home" />
+    <Button route="/about" routeName="about" />
+    <Button route="/blog" routeName="blog" />
+  </div>
+</nav>
