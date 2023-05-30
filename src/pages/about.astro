@@ -25,46 +25,48 @@ const goal = 2;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="m-2">
+  <body>
     <Nav title={pageTitle} />
-    <h2>... and my new Astro site!</h2>
+    <main class="m-4">
+      <h2>... and my new Astro site!</h2>
 
-    <p>
-      I am working through Astro's introductory tutorial. This is the second
-      page on my website, and it's the first one I built myself!
-    </p>
+      <p>
+        I am working through Astro's introductory tutorial. This is the second
+        page on my website, and it's the first one I built myself!
+      </p>
 
-    <p>
-      This site will update as I complete more of the tutorial, so keep checking
-      back and see how my journey is going!
-    </p>
-    <p>Here are a few facts about me:</p>
-    <ul>
-      <li>My name is {identity.firstName}</li>
-      <li>
-        I live in {identity.country} and I work as a {identity.occupation}
-      </li>
+      <p>
+        This site will update as I complete more of the tutorial, so keep
+        checking back and see how my journey is going!
+      </p>
+      <p>Here are a few facts about me:</p>
+      <ul>
+        <li>My name is {identity.firstName}</li>
+        <li>
+          I live in {identity.country} and I work as a {identity.occupation}
+        </li>
+        {
+          identity.hobbies.length >= 2 && (
+            <li>
+              Two of my favorite hobbies are
+              {identity.hobbies[0]} and {identity.hobbies[1]}
+            </li>
+          )
+        }
+      </ul>
+      <p>Some of my skills are:</p>
+      <ul>
+        {skills.map((skill) => <li class="mx-3 my-1">{skill}</li>)}
+      </ul>
+      {happy && <p>Me am ver Happy!</p>}
+      {finished && <p>I am Finished!</p>}
       {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Two of my favorite hobbies are
-            {identity.hobbies[0]} and {identity.hobbies[1]}
-          </li>
+        goal === 2 ? (
+          <p>My goal is to finish in 2 days</p>
+        ) : (
+          <p>My goal is different</p>
         )
       }
-    </ul>
-    <p>Some of my skills are:</p>
-    <ul>
-      {skills.map((skill) => <li class="mx-2 my-1">{skill}</li>)}
-    </ul>
-    {happy && <p>Me am ver Happy!</p>}
-    {finished && <p>I am Finished!</p>}
-    {
-      goal === 2 ? (
-        <p>My goal is to finish in 2 days</p>
-      ) : (
-        <p>My goal is different</p>
-      )
-    }
+    </main>
   </body>
 </html>
