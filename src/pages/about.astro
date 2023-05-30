@@ -1,5 +1,20 @@
 ---
 import Nav from "../components/Nav.astro";
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Craig",
+  country: "USA",
+  occupation: "Software Engineer",
+  hobbies: ["weightlifting", "dancing", "reading", "writing"].sort(
+    () => Math.random() - 0.7
+  ),
+};
+
+const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Arguing"];
+const happy = true;
+const finished = false;
+const goal = 2;
 ---
 
 <html lang="en">
@@ -8,10 +23,10 @@ import Nav from "../components/Nav.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
-  <body>
-    <Nav title="About Me" />
+  <body class="m-2">
+    <Nav title={pageTitle} />
     <h2>... and my new Astro site!</h2>
 
     <p>
@@ -23,5 +38,33 @@ import Nav from "../components/Nav.astro";
       This site will update as I complete more of the tutorial, so keep checking
       back and see how my journey is going!
     </p>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}</li>
+      <li>
+        I live in {identity.country} and I work as a {identity.occupation}
+      </li>
+      {
+        identity.hobbies.length >= 2 && (
+          <li>
+            Two of my favorite hobbies are
+            {identity.hobbies[0]} and {identity.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>Some of my skills are:</p>
+    <ul>
+      {skills.map((skill) => <li class="mx-2 my-1">{skill}</li>)}
+    </ul>
+    {happy && <p>Me am ver Happy!</p>}
+    {finished && <p>I am Finished!</p>}
+    {
+      goal === 2 ? (
+        <p>My goal is to finish in 2 days</p>
+      ) : (
+        <p>My goal is different</p>
+      )
+    }
   </body>
 </html>

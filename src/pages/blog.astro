@@ -1,5 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
+const pageTitle = "My Astro Blog";
+const posts = [1,2,3]
 ---
 
 <html lang="en">
@@ -8,11 +10,18 @@ import Nav from "../components/Nav.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <Nav title="My Astro Blog" />
-    <h2>This is my blog, where I run my mouth!</h2>
-    <p>beep boop beep i'm a robot</p>
+    <Nav title={pageTitle} />
+    <h2 class="text-xl m-4">This is my blog, where I run my mouth!</h2>
+    <ul class="mx-6">
+      
+      {posts.map((name, index) => {
+        return (<li class="hover:text-gray-500">
+        <a href=`/posts/post-${index + 1}`>Post {name}</a>
+      </li>)
+      })}
+    </ul>
   </body>
 </html>

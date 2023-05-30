@@ -1,12 +1,12 @@
 ---
-import Button from "./Button.astro";
+import Link from "./Link.astro";
 ---
 
-<nav style="display:flex; justify-content: space-between; align-items: center;">
-  <h1>{Astro.props.title}</h1>
+<nav class="p-4 flex justify-between items-center">
+  <h1 class="text-3xl font-bold text-gray-600">{Astro.props.title}</h1>
   <div>
-    <Button route="/" routeName="home" />
-    <Button route="/about" routeName="about" />
-    <Button route="/blog" routeName="blog" />
+    <Link route="/" routeName="home" />
+    <Link route="/about" routeName="about" />
+    <Link route="/blog" routeName="blog" />
   </div>
 </nav>
