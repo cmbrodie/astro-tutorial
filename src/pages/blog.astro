@@ -1,18 +1,48 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import '../styles/global.css'
 
 const posts = [1,2,3]
 ---
 <MainLayout pageTitle = "My Astro Blog">
-    <h2 class="text-xl m-4">This is my blog, where I run my mouth!</h2>
-    <ul class="mx-6 flex flex-col items-start">
+    <h2 class="subheader">This is my blog, where I run my mouth!</h2>
+    <ul class="blog-posts">
       
       {posts.map((name, index) => {
-        return (<li class="hover:text-indigo-200 hover:bg-indigo-500 py-1 px-2 rounded hover:shadow-current hover:shadow-xl font-semibold">
+        return (<li class="blog-post">
         <a href=`/posts/post-${index + 1}`>Post {name}</a>
       </li>)
       })}
     </ul>
+    <style>
+    .subheader {
+        font-size: 1.25rem;
+        margin: 1rem;
+    }    
+    .blog-posts {
+        margin: auto 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .blog-post {
+        margin: .375rem;
+    }
+    .blog-post a {
+        padding: .25rem .5rem;
+        border-radius: .25rem;
+        font-weight: 600;
+        text-decoration: none;
+
+    }
+    .blog-post a:hover {
+        color: var(--astro-orange);
+        background-color: var(--astro-purple);
+        box-shadow: 1.5px 1.5px 4.5px var(--astro-orange);
+    }
+    
+    </style>
 </MainLayout>
+
 
 

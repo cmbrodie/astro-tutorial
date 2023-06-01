@@ -1,13 +1,21 @@
 ---
 import Nav from "../components/Nav.astro";
+import "../styles/global.css";
 ---
 
-<html class="bg-indigo-100">
-  <article class="prose text-indigo-900">
+<html class="page">
+  <article>
     <slot />
   </article>
   <br />
   <Nav />
+
+  <style>
+    .page {
+      background-color: var(--astro-purple-light);
+      color: var(--astro-purple);
+    }
+  </style>
 
 
 </html>

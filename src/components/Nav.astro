@@ -1,12 +1,82 @@
 ---
 import Link from "./Link.astro";
+import "../styles/global.css";
 ---
 
-<nav class="p-4 flex justify-between items-center bg-indigo-300">
-  <h1 class="text-3xl font-bold text-indigo-900">{Astro.props.title}</h1>
-  <div>
+<nav class="navbar sm:flex-row">
+  <h1 class="title">{Astro.props.title}</h1>
+  <div class="hamburger-menu">
+    <span class="bars"></span>
+    <span class="bars"></span>
+    <span class="bars"></span>
+  </div>
+  <div class="links">
     <Link route="/" routeName="home" />
     <Link route="/about" routeName="about" />
     <Link route="/blog" routeName="blog" />
   </div>
 </nav>
+
+<style>
+  .title {
+    color: var(--astro-orange);
+    font-size: 2.125rem;
+    font-weight: 500;
+  }
+  .navbar {
+    position: relative;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--astro-purple);
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
+  }
+  .hamburger-menu {
+    display: none;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .bars {
+    background-color: var(--astro-purple-light);
+    padding: 0.25rem 1rem;
+    margin: 0.125rem;
+    border-radius: 0.5rem;
+  }
+  @media (max-width: 550px) {
+    .navbar {
+      flex-direction: column;
+      /* justify-content: space-between; */
+      align-items: flex-start;
+    }
+    .hamburger-menu {
+      display: flex;
+      flex-direction: column;
+    }
+    .links {
+      flex-direction: column;
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    .links.active {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const menuButton = document.querySelector(".hamburger-menu");
+  const links = document.querySelector(".links");
+  menuButton.addEventListener("click", () => {
+    links.classList.toggle("active");
+  });
+</script>
