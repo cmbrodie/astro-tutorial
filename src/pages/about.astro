@@ -5,9 +5,6 @@ const identity = {
   firstName: "Craig",
   country: "USA",
   occupation: "Software Engineer",
-  hobbies: ["weightlifting", "dancing", "reading", "writing"].sort(
-    () => Math.random() - 0.7
-  ),
 };
 
 const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Arguing"];
@@ -34,18 +31,12 @@ const goal = 2;
     <li>
       I live in {identity.country} and I work as a {identity.occupation}
     </li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my favorite hobbies are
-          {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
+
+    <li class="hobbies"></li>
   </ul>
   <p>Some of my skills are:</p>
-  <ul class="flex">
-    {skills.map((skill) => <li class="mx-3 my-2">{skill}</li>)}
+  <ul class="skill-list">
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
   {happy && <p>Me am ver Happy!</p>}
   {finished && <p>I am Finished!</p>}
@@ -57,3 +48,22 @@ const goal = 2;
     )
   }
 </MainLayout>
+
+<style>
+  .skill-list {
+    display: flex;
+  }
+  .skill {
+    list-style: none;
+    margin: 0.75rem;
+    font-weight: 500;
+  }
+</style>
+
+<script>
+  const hobbies = ["weightlifting", "dancing", "reading", "writing"].sort(
+    () => Math.random() - 0.7
+  );
+  document.querySelector(".hobbies").innerHTML = `Two of my favorite hobbies are
+          ${hobbies[0]} and ${hobbies[1]}`;
+</script>
