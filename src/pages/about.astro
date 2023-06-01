@@ -11,6 +11,7 @@ const skills = ["HTML", "CSS", "Javascript", "React", "Astro", "Arguing"];
 const happy = true;
 const finished = false;
 const goal = 2;
+const skillColor = "navy";
 ---
 
 <MainLayout pageTitle="About Me">
@@ -49,7 +50,15 @@ const goal = 2;
   }
 </MainLayout>
 
-<style>
+<script>
+  const hobbies = ["weightlifting", "dancing", "reading", "writing"].sort(
+    () => Math.random() - 0.7
+  );
+
+  document.querySelector(".hobbies").innerHTML = `Two of my favorite hobbies are
+                <span class="hobby astro-KH7BTL4R">${hobbies[0]}</span> and <span class="hobby astro-KH7BTL4R">${hobbies[1]}</span>`;
+</script>
+<style define:vars={{ skillColor }}>
   .skill-list {
     display: flex;
   }
@@ -57,13 +66,9 @@ const goal = 2;
     list-style: none;
     margin: 0.75rem;
     font-weight: 500;
+    color: var(--skillColor);
+  }
+  .hobbies .hobby {
+    color: red;
   }
 </style>
-
-<script>
-  const hobbies = ["weightlifting", "dancing", "reading", "writing"].sort(
-    () => Math.random() - 0.7
-  );
-  document.querySelector(".hobbies").innerHTML = `Two of my favorite hobbies are
-          ${hobbies[0]} and ${hobbies[1]}`;
-</script>
