@@ -44,6 +44,7 @@ import "../styles/global.css";
     top: 2.25rem;
     right: 2rem;
     cursor: pointer;
+    transition: transform 0.1s ease-in-out;
   }
   .bars {
     background-color: var(--astro-purple-light);
@@ -70,6 +71,9 @@ import "../styles/global.css";
     .links.active {
       display: flex;
     }
+    .hamburger-menu.active {
+      transform: rotate(-90deg);
+    }
   }
 </style>
 
@@ -78,5 +82,6 @@ import "../styles/global.css";
   const links = document.querySelector(".links");
   menuButton.addEventListener("click", () => {
     links.classList.toggle("active");
+    menuButton.classList.toggle("active");
   });
 </script>
