@@ -1,21 +1,21 @@
 ---
+import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import "../styles/global.css";
 ---
 
 <html class="page">
+  <Nav />
   <article>
     <slot />
   </article>
   <br />
-  <Nav />
+  <Footer />
 
   <style>
     .page {
       background-color: var(--astro-purple-light);
-      color: var(--astro-purple);
+      color: var(--astro-purple-dark);
     }
   </style>
-
-
 </html>
