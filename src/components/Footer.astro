@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+import Social from "./Social.astro";
+import twitter from "../images/twitter-svgrepo-com.svg";
+import github from "../images/github-svgrepo-com.svg";
+import youtube from "../images/youtube-svgrepo-com.svg";
+---
+
+<footer class="footer">
+  <div class="social-links">
+    <Social platform="twitter" username="astrodotbuild" image={twitter} />
+    <Social platform="github" username="cmbrodie" image={github} />
+    <Social platform="youtube" username="astrodotbuild" image={youtube} />
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--astro-purple);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+</style>
