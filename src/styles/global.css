@@ -1,8 +1,10 @@
 :root {
   --astro-orange: hsl(22, 100%, 70%);
   --astro-purple: hsl(256, 28%, 19%);
+  --astro-purple-hover: hsl(256, 28%, 29%);
   --astro-purple-dark: hsl(256, 28%, 10%);
   --astro-purple-light: hsl(256, 28%, 92%);
+  --astro-purple-med: hsl(256, 28%, 84%);
   background-color: var(--astro-purple-light);
   color: var(--astro-purple-dark);
   font-family: "Inter", sans-serif;

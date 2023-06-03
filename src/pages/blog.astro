@@ -1,50 +1,28 @@
 ---
+import BlogPost from "../components/BlogPost.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import '../styles/global.css'
-
-const posts = [1,2,3]
+import "../styles/global.css";
+const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
-<MainLayout pageTitle = "My Astro Blog">
-    <h2 class="subheader">This is my blog, where I run my mouth!</h2>
-    <ul class="blog-posts">
-      
-      {posts.map((name, index) => {
-        return (<li class="blog-post">
-        <a href=`/posts/post-${index + 1}`>Post {name}</a>
-      </li>)
-      })}
-    </ul>
-    <style>
+
+<MainLayout pageTitle="My Astro Blog">
+  <h2 class="subheader">This is my blog, where I run my mouth!</h2>
+  <ul class="blog-posts">
+    {
+      allPosts.map((post) => {
+        return <BlogPost url={post.url} title={post.frontmatter.title} />;
+      })
+    }
+  </ul>
+  <style>
     .subheader {
-        font-size: 1.25rem;
-        margin: 1rem;
-    }    
+      font-size: 1.25rem;
+      margin: 1rem;
+    }
     .blog-posts {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
-    .blog-post {
-        margin: .375rem;
-        list-style: inherit;
-    }
-    .blog-post a {
-        padding: .25rem .5rem;
-        border-radius: .25rem;
-        font-weight: 600;
-        text-decoration: none;
-        color: inherit;
-
-
-    }
-    .blog-post a:hover {
-        color: var(--astro-orange);
-        background-color: var(--astro-purple);
-        box-shadow: 1.5px 1.5px 4.5px var(--astro-orange);
-    }
-    
-    </style>
+  </style>
 </MainLayout>
-
-
-

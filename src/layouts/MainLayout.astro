@@ -22,6 +22,7 @@ import "../styles/global.css";
   <body>
     <div class="container">
       <Nav title={pageTitle} />
+      <h1 class="title">{pageTitle}</h1>
       <main>
         <slot />
       </main>
@@ -30,13 +31,21 @@ import "../styles/global.css";
   </body>
 </html>
 <style>
+  .title {
+    text-align: center;
+    margin: 0.5rem;
+    font-size: 2.25rem;
+    color: var(--astro-purple);
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+  }
   .container {
     display: flex;
     flex-direction: column;
     height: 100vh;
   }
   main {
-    margin: 1rem;
+    margin: 0.5rem 1rem;
     flex-grow: 1;
   }
 </style>

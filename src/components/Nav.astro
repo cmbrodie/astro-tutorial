@@ -4,7 +4,7 @@ import "../styles/global.css";
 ---
 
 <nav class="navbar">
-  <h1 class="title">{Astro.props.title}</h1>
+  <h1 class="title">AstroNav</h1>
   <div class="hamburger-menu">
     <span class="bars"></span>
     <span class="bars"></span>
@@ -45,6 +45,12 @@ import "../styles/global.css";
     right: 2rem;
     cursor: pointer;
     transition: transform 0.1s ease-in-out;
+  }
+  .hamburger-menu:hover,
+  .hamburger-menu:active {
+    background-color: var(--astro-purple-hover);
+    border-radius: 0.25rem;
+    box-shadow: 1px 1px 3px var(--astro-purple-light);
   }
   .bars {
     background-color: var(--astro-purple-light);

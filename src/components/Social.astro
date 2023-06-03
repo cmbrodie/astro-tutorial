@@ -1,5 +1,6 @@
 ---
 const { platform, username, image } = Astro.props;
+import "../styles/global.css";
 ---
 
 <a href={`https://www.${platform}.com/${username}`}>
@@ -10,5 +11,11 @@ const { platform, username, image } = Astro.props;
   .social-icon {
     height: 2rem;
     width: 2rem;
+    border-radius: 0.5rem;
+  }
+  .social-icon:hover,
+  .social-icon:active {
+    background-color: var(--astro-purple-light);
+    box-shadow: 1px 1px 3px var(--astro-purple-light);
   }
 </style>
