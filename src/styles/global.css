@@ -9,7 +9,44 @@
   color: var(--astro-purple-dark);
   font-family: "Inter", sans-serif;
 }
+html.dark {
+  background-color: var(--astro-purple);
+  color: var(--astro-purple-light);
+}
+.dark .navbar {
+  background-color: var(--astro-purple-light);
+  color: var(--astro-purple-dark);
+}
 
+.dark .navbar .nav-links {
+  color: var(--astro-purple-dark);
+}
+.dark .navbar .title {
+  text-shadow: 1px 1px 3px var(--astro-purple-dark);
+}
+.dark .navbar .nav-links:hover,
+.dark .navbar .nav-links:active {
+  color: var(--astro-purple-hover);
+  text-shadow: 1px 1px 3px var(--astro-orange);
+}
+.dark .tagged li a {
+  color: var(--astro-purple-light);
+  border: 1px dotted var(--astro-purple-light);
+}
+.dark .hamburger-menu:hover,
+.dark .hamburger-menu:active {
+  background-color: var(--astro-purple-med);
+  box-shadow: 1px 1px 3px var(--astro-orange);
+}
+.dark .bars {
+  background-color: var(--astro-purple-dark);
+}
+.dark .frontmatter {
+  color: var(--astro-purple-dark);
+}
+/* .dark .nav-links {
+    color: var;
+} */
 body {
   margin: 0;
 }

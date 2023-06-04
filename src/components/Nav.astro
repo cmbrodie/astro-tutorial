@@ -1,6 +1,7 @@
 ---
 import Link from "./Link.astro";
 import "../styles/global.css";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <nav class="navbar">
@@ -11,6 +12,7 @@ import "../styles/global.css";
     <span class="bars"></span>
   </div>
   <div class="links">
+    <ThemeIcon />
     <Link route="/" routeName="home" />
     <Link route="/about" routeName="about" />
     <Link route="/blog" routeName="blog" />
@@ -40,7 +42,7 @@ import "../styles/global.css";
   }
   .hamburger-menu {
     display: none;
-
+    border-radius: 0.5rem;
     position: absolute;
     top: 2.25rem;
     right: 2rem;
