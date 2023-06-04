@@ -1,8 +1,10 @@
 ---
 import BlogPost from "../components/BlogPost.astro";
+import TaggedPosts from "../components/TaggedPosts.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 import "../styles/global.css";
 const allPosts = await Astro.glob("../pages/posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 ---
 
 <MainLayout pageTitle="My Astro Blog">
@@ -14,15 +16,16 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
       })
     }
   </ul>
-  <style>
-    .subheader {
-      font-size: 1.25rem;
-      margin: 1rem;
-    }
-    .blog-posts {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  </style>
+  <TaggedPosts tags={tags} />
 </MainLayout>
+<style>
+  .subheader {
+    font-size: 1.25rem;
+    margin: 1rem;
+  }
+  .blog-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+</style>

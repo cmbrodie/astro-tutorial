@@ -14,6 +14,7 @@ import "../styles/global.css";
     <Link route="/" routeName="home" />
     <Link route="/about" routeName="about" />
     <Link route="/blog" routeName="blog" />
+    <Link route="/tags" routeName="tags" />
   </div>
 </nav>
 
@@ -68,10 +69,12 @@ import "../styles/global.css";
       flex-direction: column;
     }
     .links {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
       font-size: 1.5rem;
       width: 100%;
-      text-align: center;
+      padding: 0 2rem;
+      /* text-align: center; */
       display: none;
     }
     .links.active {

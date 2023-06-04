@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+
+const { tags } = Astro.props;
+---
+
+<div class="posts-by-tag">
+  <p>All posts by tag</p>
+  <ul class="tagged">
+    {
+      tags.map((tag) => {
+        return (
+          <li>
+            <a href={`/tags/${tag}`}>{tag}</a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .posts-by-tag {
+    margin-top: 4rem;
+  }
+  .tagged {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-left: 1rem;
+  }
+  .tagged li {
+    list-style: none;
+  }
+  .tagged li a {
+    text-decoration: none;
+    color: var(--astro-purple);
+    font-weight: 600;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+  }
+  .tagged li a:hover,
+  .tagged li a:active {
+    color: var(--astro-purple-light);
+    background-color: var(--astro-purple);
+    box-shadow: 1px 1px 4.5px var(--astro-orange);
+  }
+</style>
