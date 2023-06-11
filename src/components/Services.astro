@@ -1,0 +1,80 @@
+---
+import '../styles/global.css'
+
+---
+
+<div class="dropdown">
+    <div class="services">services 
+        <svg class="down" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+      </svg></div>
+    <div class="services-menu">
+        <a class="service" href="/s1">service 1</a>
+        <a class="service" href="/s2">service 2</a>
+        <a class="service" href="/s3">service 3</a>
+    </div>
+</div>
+
+
+
+<style>
+    .dropdown {
+        position: relative;
+    }
+    .services {
+        display: inline-block;
+
+      padding: 0.25rem 0.75rem;
+      font-weight: 600;
+      color: var(--astro-orange);
+      border-radius: 0.5rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .services:hover,
+    .services:active {
+      color: var(--astro-purple-light);
+      text-shadow: 1px 1px 3px var(--astro-purple-light);
+    }
+    .services .down {
+        width: 1rem;
+        display: inline-block;
+        font-weight: 400;
+        transition: transform .5s ease-in;
+    }
+    .dropdown:hover .down, .dropdown:active .down {
+        transform: rotate(180deg);
+    }
+
+    .services-menu {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--astro-purple);
+        border-radius: .5rem;
+        top: 100%;
+        left: 10%;
+        padding: .5rem;
+        box-shadow: 0px 2px 6px var(--astro-purple);
+
+    }
+    .dropdown:hover .services-menu {
+       opacity: 1;
+       visibility: visible;
+    }
+    .service {
+        text-decoration: none;
+        color: var(--astro-purple-light);
+        margin-bottom: .25rem;
+        padding-bottom: .25rem;
+    }
+    .service:hover {
+        border-bottom: 1px solid var(--astro-purple-light);
+        text-shadow: 1px 1px 3px var(--astro-purple-light);
+    }
+    
+  </style>

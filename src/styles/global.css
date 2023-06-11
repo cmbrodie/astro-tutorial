@@ -29,6 +29,9 @@ html.dark {
   color: var(--astro-purple-hover);
   text-shadow: 1px 1px 3px var(--astro-orange);
 }
+.dark .page-title {
+  color: var(--astro-purple-med);
+}
 .dark .tagged li a {
   color: var(--astro-purple-light);
   border: 1px dotted var(--astro-purple-light);

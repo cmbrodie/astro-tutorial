@@ -2,6 +2,7 @@
 import Link from "./Link.astro";
 import "../styles/global.css";
 import ThemeIcon from "./ThemeIcon.astro";
+import Services from "./Services.astro";
 ---
 
 <nav class="navbar">
@@ -15,6 +16,7 @@ import ThemeIcon from "./ThemeIcon.astro";
     <ThemeIcon />
     <Link route="/" routeName="home" />
     <Link route="/about" routeName="about" />
+    <Services />
     <Link route="/blog" routeName="blog" />
     <Link route="/tags" routeName="tags" />
   </div>
@@ -61,7 +63,7 @@ import ThemeIcon from "./ThemeIcon.astro";
     margin: 0.25rem;
     border-radius: 0.5rem;
   }
-  @media (max-width: 550px) {
+  @media (max-width: 700px) {
     .navbar {
       flex-direction: column;
       align-items: flex-start;
