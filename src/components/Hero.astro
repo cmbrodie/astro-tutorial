@@ -1,0 +1,86 @@
+---
+import '../styles/global.css'
+const {header} = Astro.props
+---
+  
+  <div class="container">
+    <div class="inner-container">
+        <div class="text-container">
+          <h2 class="header">Get out of this world, without leaving home</h2>
+          <p class="text">Explore the cosmos from your backyard. Discover galaxies, nebulae, stars, and more with our intuitive platform.</p>
+          <div class="button-container">
+            <a href="#" class="button">Get started</a>
+            <a href="#" class="link">Learn more <span aria-hidden="true">→</span></a>
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .container {
+        background-color: var(--astro-purple-header);
+      background-image: url('../images/wallace_gromit.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply; 
+    }
+    .inner-container {
+      margin: auto;
+      max-width: 112rem; 
+      padding: 2rem 1.5rem;
+    }
+    @media (min-width: 658px) {
+        .container {
+            background-size: contain;
+        }
+    }
+    
+    .text-container {
+      margin: auto;
+      max-width: 28rem;
+      text-align: center;
+    }
+    .header {
+      color: var(--astro-purple-bright);
+      text-align: center;
+    margin: 0.5rem;
+    font-size: 2.25rem;
+    font-family: "Karla", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    }
+    .text {
+      margin-top: 1.5rem; 
+      font-size: 1.125rem; 
+      line-height: 2; 
+      color: var(--astro-purple-bright); 
+    }
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .button {
+      padding: 0.625rem;
+      padding-left: 0.875rem;
+      padding-right: 0.875rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background-color: var(--astro-purple-light);
+      color: var(--astro-purple-dark); 
+      border-radius: 0.375rem;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #F3F4F6; 
+    }
+    .link {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--astro-purple-light);
+      text-decoration: none;
+    }
+  </style>

@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
 const pageTitle = Astro.props.pageTitle;
 import "../styles/global.css";
@@ -21,8 +22,9 @@ import "../styles/global.css";
   </head>
   <body>
     <div class="container">
-      <Nav title={pageTitle} />
-      <h1 class="page-title">{pageTitle}</h1>
+      <Nav />
+      <Hero header={pageTitle} />
+      <h1 class="header">{pageTitle}</h1>
       <main>
         <slot />
       </main>
@@ -31,15 +33,15 @@ import "../styles/global.css";
   </body>
 </html>
 <style>
-  .page-title {
-    text-align: center;
+  .header {
+      color: var(--astro-purple);
+      text-align: center;
     margin: 0.5rem;
     font-size: 2.25rem;
     font-family: "Karla", sans-serif;
     font-weight: 700;
-    color: var(--astro-purple-hover);
     letter-spacing: 0.125rem;
-  }
+    }
   .container {
     display: flex;
     flex-direction: column;
