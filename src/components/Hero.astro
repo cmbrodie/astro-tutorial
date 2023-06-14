@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css'
-const {header} = Astro.props
+
 ---
   
-  <div class="container">
+  <div class="hero">
     <div class="inner-container">
         <div class="text-container">
           <h2 class="header">Get out of this world, without leaving home</h2>
@@ -17,24 +17,40 @@ const {header} = Astro.props
   </div>
   
   <style>
-    .container {
+    /* .container {
         background-color: var(--astro-purple-header);
       background-image: url('../images/wallace_gromit.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       background-blend-mode: multiply; 
-    }
+    } */
+
+.hero {
+  background: linear-gradient(
+    105deg,
+    hsla(0, 0%, 97%, 0.5) 10%,
+      var(--astro-purple-med) 25%,
+      hsla(0, 0%, 97%, 0.5) 40%,
+
+      hsla(0, 0%, 97%, 0.5) 60%,
+      var(--astro-purple-med) 75%,
+      hsla(0, 0%, 97%, 0.5) 90%
+       );
+  width: 100%;
+}
+
+
     .inner-container {
       margin: auto;
-      max-width: 112rem; 
+      /* max-width: 112rem;  */
       padding: 2rem 1.5rem;
     }
-    @media (min-width: 658px) {
+    /* @media (min-width: 658px) {
         .container {
             background-size: contain;
         }
-    }
+    } */
     
     .text-container {
       margin: auto;
@@ -42,7 +58,7 @@ const {header} = Astro.props
       text-align: center;
     }
     .header {
-      color: var(--astro-purple-bright);
+      color: var(--astro-purple-dark);
       text-align: center;
     margin: 0.5rem;
     font-size: 2.25rem;
@@ -54,7 +70,7 @@ const {header} = Astro.props
       margin-top: 1.5rem; 
       font-size: 1.125rem; 
       line-height: 2; 
-      color: var(--astro-purple-bright); 
+      color: var(--astro-purple-dark); 
     }
     .button-container {
       display: flex;
@@ -69,18 +85,28 @@ const {header} = Astro.props
       padding-right: 0.875rem;
       font-size: 0.875rem;
       font-weight: 600;
-      background-color: var(--astro-purple-light);
-      color: var(--astro-purple-dark); 
+      background: linear-gradient(
+        to top right, var(--astro-purple-dark) 20%, var(--astro-purple-hover) 90%
+        );
+      color: var(--astro-purple-light); 
       border-radius: 0.375rem;
       text-decoration: none;
     }
-    .button:hover {
-      background-color: #F3F4F6; 
+    .button:hover, .button:active {
+        background: linear-gradient(
+        to bottom right, var(--astro-purple-dark) 20%, var(--astro-purple-hover) 90%
+        );
     }
     .link {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--astro-purple-light);
+      color: var(--astro-purple-dark);
       text-decoration: none;
+      
+    }
+    .link:hover {
+        color: var(--astro-purple);
+        border-radius: .375rem;
+        box-shadow: 1px 1px 1px var(--astro-purple-med);
     }
   </style>

@@ -19,12 +19,14 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{pageTitle}</title>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <Nav />
-      <Hero header={pageTitle} />
-      <h1 class="header">{pageTitle}</h1>
+        <Nav />
+        {pageTitle == 'Home Page'? 
+        <Hero />:
+        <h1 class="header">{pageTitle}</h1>
+        }
       <main>
         <slot />
       </main>
@@ -48,7 +50,8 @@ import "../styles/global.css";
     height: 100vh;
   }
   main {
-    margin: 0.5rem 1rem;
+    margin: 0 auto;
     flex-grow: 1;
+    max-width: 36.75rem;
   }
 </style>

@@ -5,7 +5,7 @@
   --astro-purple-dark: hsl(256, 28%, 10%);
   --astro-purple-light: hsl(256, 28%, 92%);
   --astro-purple-bright: hsl(256, 28%, 96%);
-  --astro-purple-med: hsl(256, 28%, 84%);
+  --astro-purple-med: hsl(256, 28%, 88%);
   --astro-purple-header: hsl(256, 28%, 74%);
   background-color: var(--astro-purple-light);
   color: var(--astro-purple-dark);
@@ -17,17 +17,16 @@ html.dark {
 }
 .dark .navbar {
   background-color: var(--astro-purple-light);
-  color: var(--astro-purple-dark);
 }
 
-.dark .navbar .nav-links {
+.dark .navbar .nav-links, .dark .services {
   color: var(--astro-purple-dark);
 }
 .dark .navbar .title {
   text-shadow: 1px 1px 3px var(--astro-purple-dark);
 }
 .dark .navbar .nav-links:hover,
-.dark .navbar .nav-links:active {
+.dark .navbar .nav-links:active, .dark .services:hover, .dark .services:active {
   color: var(--astro-purple-hover);
   text-shadow: 1px 1px 3px var(--astro-orange);
 }
@@ -49,6 +48,7 @@ html.dark {
 .dark .frontmatter {
   color: var(--astro-purple-dark);
 }
+
 /* .dark .nav-links {
     color: var;
 } */
